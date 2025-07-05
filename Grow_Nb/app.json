@@ -46,11 +46,13 @@
     },
     "extra": {
       "eas": {
-        "projectId": "your-project-id-here"
-      }
+        "projectId": "e66dea0e-8ab2-404c-a0fb-b06ddfb319ab"
+      },
+      "router": {}
     },
     "runtimeVersion": {
       "policy": "appVersion"
-    }
+    },
+    "owner": "btech_student"
   }
 }
