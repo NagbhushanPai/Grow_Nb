@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, FlatList, TouchableOpacity, Modal, TextInput, SafeAreaView } from 'react-native';
+import { StyleSheet, View, Text, FlatList, TouchableOpacity, Modal, TextInput, SafeAreaView, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -34,6 +34,20 @@ export default function TodoScreen() {
   };
 
   const handleSaveTask = () => {
+    if (!currentTask?.title?.trim()) {
+      Alert.alert('Error', 'Please enter a task title');
+      return;
+    }
+
+    // Validate date format if provided
+    if (currentTask.dueDate && currentTask.dueDate.trim()) {
+      const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+      if (!dateRegex.test(currentTask.dueDate)) {
+        Alert.alert('Error', 'Please enter date in YYYY-MM-DD format');
+        return;
+      }
+    }
+
     if (currentTask && currentTask.title?.trim()) {
       if (currentTask.id) {
         // Edit existing task

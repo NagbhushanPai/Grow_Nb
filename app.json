@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "05ce092c-6cc9-407a-8f93-eaf321d41390"
+      }
+    },
+    "android": {
+      "package": "com.btech_student.productivity_app"
+    }
+  }
+}
